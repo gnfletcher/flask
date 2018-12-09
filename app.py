@@ -100,7 +100,7 @@ def addShoppingCart(shoppingcart, customer_id, product_id, quantity):
 
 
 @app.route('/Wishlist')
-def getWishlit():
+def getWishlist():
     wishlist = session.query(Wishlist).all()
     return render_template('wishlist.html', wishlist = wishlist)
 
