@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body class='pane'>
+    <div class='menu'>
+      <ul>
+         <li><a href="/">Home</a></li>
+         <li><a href="/films">Films</a></li>
+         <li><a href="/actors">Actors</a></li>
+      </ul>
+    </div>
+    <h1 class='header'>{% block h1 %}{% endblock %}</h1>
+    <div id='messages' class='flash'></div>
+    <!-- Flash any messages after the h1 tag -->
+    {% with messages = get_flashed_messages() %}
+	   {% if messages %}
+	      <ul>
+	         {% for message in messages %}
+	            <li><strong>{{ message }}</strong></li>
+	         {% endfor %}
+	      </ul>
+	   {% endif %}
+    {% endwith %} 
+    </div>   
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer" class='footer'>
+      <hr />
+      &copy; Copyright 2018 by Sakila Films
+    </div>
+  </body>
+</html>

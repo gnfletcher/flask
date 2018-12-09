@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Delete a film{% endblock %}
+{% block h1 %}Are you sure you want to delete {{ film.title }}?{% endblock %}
+
+{% block content %}
+   <form action ='{{ url_for('deleteFilm', film_id = film.film_id ) }}' method='post'>       
+      <input type='submit' />       
+   </form>
+   <a href="{{ url_for('getFilm', film_id = film.film_id ) }}">Cancel</a>
+{% endblock %}

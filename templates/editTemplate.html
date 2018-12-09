@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Update an existing film{% endblock %}
+{% block h1 %}Update an existing film{% endblock %}
+
+{% block content %}
+   <form action ='{{ url_for('updateFilm', film_id = film.film_id ) }}' method='post'>
+      <table>                    
+         <tr><td><label for='title'>Title: </label>
+             <td><input type='text' size='50' 
+                        name='title' value= '{{ film.title }}'/></td></tr>
+         <tr><td><label for='description'>Description: </label>
+             <td><textarea name='description' 
+                           rows='4' cols='50'>{{ film.description }}</textarea></td></tr>           
+         <tr><td><label for='release_year'>Release year: </label>
+             <td><input type='text' size='10' 
+                        name='release_year' value= '{{ film.release_year }}' /></td></tr>
+         <tr><td><label for='length'>Length: </label>
+             <td><input type='text' size='10' 
+                        name='length' value= '{{ film.length }}' /></td></tr>
+         <tr><td><label for='rating'>Rating: </label>
+             <td><input type='text' size='10' 
+                        name='rating' value= '{{ film.rating }}' /></td></tr>
+	  </table>
+         
+      <input type='submit' />       
+   </form>
+{% endblock %}
