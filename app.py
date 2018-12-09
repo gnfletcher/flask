@@ -88,6 +88,17 @@ def getShoppingCart():
     return render_template('shoppingcart.html', shoppingcart = shoppingcart)
 
 
+@app.route('/ShoppingCart/add')
+def addShoppingCart(shoppingcart, customer_id, product_id, quantity):
+    if request.method == 'POST':
+        newshoppingcart = session.execute('add_to_cart', customer_id=customer_id, product_id=product_id, quantity=quantity)
+        session.commit()
+        flash(product_id + " added to cart")
+        return render_template('shoppingcart.html', shoppingcart=shoppingcart)
+    else:
+        return render_template('shoppingcart.html', shoppingcart=shoppingcart)
+
+
 @app.route('/Wishlist')
 def getWishlit():
     wishlist = session.query(Wishlist).all()
