@@ -27,13 +27,13 @@ def index():
 @app.route('/products')
 def getProducts():
     product = session.query(Product).all()
-    return render_template('product.html', product = product)
+    return render_template('Products.html')
 
 
-@app.route('/products/<int:product_id>/')
+@app.route('/product/<int:product_id>/')
 def getProduct(product_id):
     product = session.query(Product).filter_by(product_id=product_id).one()
-    return render_template('product.html', product=product)
+    return render_template('Product.html', product=product)
 
 
 @app.route('/products/new/', methods=['GET', 'POST'])
