@@ -24,14 +24,14 @@ def index():
     return render_template('main.html')
 
 
-@app.route('/products')
-def getProducts():
-    product = session.query(Product).all()
-    return render_template('Products.html')
+@app.route('/Products')
+def getproducts():
+    products = session.query(Product).all()
+    return render_template('Products.html', products=products)
 
 
 @app.route('/product/<int:product_id>/')
-def getProduct(product_id):
+def getproduct(product_id):
     product = session.query(Product).filter_by(product_id=product_id).one()
     return render_template('Product.html', product=product)
 
