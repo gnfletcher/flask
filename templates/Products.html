@@ -1,18 +1,17 @@
 {% extends "base.html" %}
-{% block title %}Add actor for {{ film.title }}{% endblock %}
-{% block h1 %}Add actor for {{ film.title }}{% endblock %}
+{% block title %}2mazon{% endblock %}
+{% block h1 %}2mazon{% endblock %}
+
 
 {% block content %}
-   <summary>{{ film.description }}</summary>
-
-   <form action='{{ url_for('addRole', film_id = film_id ) }}' method='post'>>
-      <select name='actor_id'>
-         {% for actor in actors %}
-            {% if actor not in film.actors %}
-               <option value='{{ actor.actor_id }}'>{{ actor.first_name }} {{actor.last_name }}</option>>
-            {% endif %}
-         {% endfor %}
-      </select>     
-      <input type='submit' />       
-   </form>
+    <ul>
+    {% for products in products %}
+       <h2><a href='/Product/{{ products.product_id }}/'>{{ products.name }}</a></h2>
+       <summary>{{ products.description }}</summary>
+   {% endfor %}
+   </ul>
+   <ul>
+      <li><a href='/products'>View Products</a>
+      <li><a href='/products/new'>Create new product</a>
+   </ul>
 {% endblock %}
