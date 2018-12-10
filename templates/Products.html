@@ -4,10 +4,12 @@
 
 
 {% block content %}
-    {% for product in products %}
-       <h2><a href='/Product/{{ product.product_id }}/'>{{ product.name }}</a></h2>
-       <summary>{{ product.description }}</summary>
+    <ul>
+    {% for products in products %}
+       <h2><a href='/Product/{{ products.product_id }}/'>{{ products.name }}</a></h2>
+       <summary>{{ products.description }}</summary>
    {% endfor %}
+   </ul>
    <ul>
       <li><a href='/products'>View Products</a>
       <li><a href='/products/new'>Create new product</a>

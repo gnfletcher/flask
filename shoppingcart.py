@@ -8,10 +8,10 @@ class ShoppingCart(BASE):
     __tablename__ = 'shoppingcart'
 
     shoppingCartID = Column(SMALLINT(unsigned=True), nullable=False, primary_key=True)
-    quantity = Column(SMALLINT(unsigned=True), nullable=False, primary_key=True)
+    quantity = Column(SMALLINT(unsigned=True), nullable=False)
     createdDate = Column(DATE)
-    customerID = Column(SMALLINT(unsigned=True), nullable=False, primary_key=True)
-    productID = Column(SMALLINT(unsigned=True), nullable=False, primary_key=True)
+    customerID = Column(SMALLINT(unsigned=True), nullable=False)
+    productID = Column(SMALLINT(unsigned=True), nullable=False)
     last_update = Column(TIMESTAMP, nullable=False)
 
     __table_args__ = (
