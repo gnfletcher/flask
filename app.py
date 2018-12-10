@@ -27,7 +27,7 @@ def index():
 @app.route('/products')
 def getProducts():
     product = session.query(Product).all()
-    return render_template('Products.html')
+    return render_template('Products.html', product=product)
 
 
 @app.route('/product/<int:product_id>/')
