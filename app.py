@@ -24,6 +24,16 @@ def index():
     return render_template('main.html')
 
 
+@app.route('/Admin')
+def adminPage():
+    return render_template('admin.html')
+
+
+@app.route('/Customers')
+def customersPage():
+    return render_template('Customers.html')
+
+
 @app.route('/Products')
 def getProducts():
     product = session.query(Product).all()
