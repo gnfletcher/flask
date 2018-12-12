@@ -10,14 +10,21 @@ from product import Product
 from shoppingcart import ShoppingCart
 from wishlist import Wishlist
 from customers import Customers
+from sakilaCustomers import SakilaCustomers
+from sakilaProducts import SakilaProducts
 import datetime;
 
-connection = create_engine('mysql+pymysql://guest:guest@localhost/db_project')
+connection = create_engine('mysql+pymysql://guest:guest@localhost:3306/db_project')
+sakilaconnection = create_engine('mysql+pymysql://guest:guest@localhost:3306/sakila')
 BASE.metadata.create_all(connection)
+BASE.metadata.create_all(sakilaconnection)
 
 Session = sessionmaker(bind=connection)
+Session2 = sessionmaker(bind=sakilaconnection)
 session = Session()
+session2 = Session2()
 session.rollback()
+session2.rollback()
 
 
 @app.route('/')
@@ -28,6 +35,23 @@ def index():
 @app.route('/Admin')
 def adminpage():
     return render_template('admin.html')
+
+
+@app.route('/Sakila')
+def sakilapage():
+
+    return render_template('sakila.html')
+
+
+@app.route('/Sakila/Customers')
+def sakilacustomerspage():
+    customers = session2.query(SakilaCustomers).all()
+    return render_template('customers.html', customers=customers)
+
+@app.route('/Sakila/Products')
+def sakilaproductspage():
+    products = session2.query(SakilaProducts).all()
+    return render_template('films.html', products=products)
 
 
 @app.route('/Customers')
