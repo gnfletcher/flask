@@ -12,6 +12,8 @@ from wishlist import Wishlist
 from customers import Customers
 from sakilaCustomers import SakilaCustomers
 from sakilaProducts import SakilaProducts
+from inventory import Inventory
+from suppliers import Suppliers
 import datetime;
 
 connection = create_engine('mysql+pymysql://guest:guest@localhost:3306/db_project')
@@ -54,10 +56,22 @@ def sakilaproductspage():
     return render_template('films.html', products=products)
 
 
+@app.route('/Inventory')
+def getinventory():
+    inventory = session.query(Inventory).all()
+    return render_template('inventory.html', inventory=inventory)
+
+
 @app.route('/Customers')
 def customerspage():
     customers = session.query(Customers).all()
     return render_template('customers.html', customers=customers)
+
+
+@app.route('/Suppliers')
+def getsuppliers():
+    suppliers = session.query(Suppliers).all()
+    return render_template('suppliers.html', suppliers=suppliers)
 
 
 @app.route('/Products')

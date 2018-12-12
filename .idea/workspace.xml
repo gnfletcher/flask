@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc93e425-ee56-480b-9dd7-28bed4659076" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sakilaCustomers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sakilaProducts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Films.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/sakila.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customers.py" beforeDir="false" afterPath="$PROJECT_DIR$/customers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/product.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sakilaCustomers.py" beforeDir="false" afterPath="$PROJECT_DIR$/sakilaCustomers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sakilaProducts.py" beforeDir="false" afterPath="$PROJECT_DIR$/sakilaProducts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/customers.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customers.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/flask$2mazon.coverage" NAME="2mazon Coverage Results" MODIFIED="1544628301825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flask$2mazon.coverage" NAME="2mazon Coverage Results" MODIFIED="1544630757862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/2mazon$2mazon.coverage" NAME="2mazon Coverage Results" MODIFIED="1544378346214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -33,39 +32,48 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="7" />
-          <entry key="py" value="7" />
+          <entry key="html" value="8" />
+          <entry key="py" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="7" />
-          <entry key="Python" value="7" />
+          <entry key="HTML" value="8" />
+          <entry key="Python" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="386" />
-          <entry key="py" value="815" />
-          <entry key="txt" value="54" />
+          <entry key="html" value="450" />
+          <entry key="py" value="1047" />
+          <entry key="txt" value="69" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="386" />
-          <entry key="PLAIN_TEXT" value="54" />
-          <entry key="Python" value="815" />
+          <entry key="HTML" value="450" />
+          <entry key="PLAIN_TEXT" value="69" />
+          <entry key="Python" value="1047" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+            <state relative-caret-position="112">
+              <caret line="70" column="39" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -80,10 +88,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/customers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/product.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sakilaCustomers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+            <state relative-caret-position="68">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -91,8 +123,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sakilaProducts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+            <state relative-caret-position="119">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -105,54 +137,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Products.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/Films.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/customers.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="84" lean-forward="true" selection-start-line="17" selection-start-column="84" selection-end-line="17" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/customers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/admin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -185,16 +169,17 @@
         <option value="$PROJECT_DIR$/templates/Customers.html" />
         <option value="$PROJECT_DIR$/templates/Inventory.html" />
         <option value="$PROJECT_DIR$/templates/ShoppingCart.html" />
-        <option value="$PROJECT_DIR$/templates/admin.html" />
         <option value="$PROJECT_DIR$/templates/Products.html" />
-        <option value="$PROJECT_DIR$/templates/customers.html" />
         <option value="$PROJECT_DIR$/sakila.html" />
-        <option value="$PROJECT_DIR$/customers.py" />
-        <option value="$PROJECT_DIR$/sakilaCustomers.py" />
-        <option value="$PROJECT_DIR$/sakilaProducts.py" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/templates/sakila.html" />
         <option value="$PROJECT_DIR$/templates/Films.html" />
+        <option value="$PROJECT_DIR$/templates/customers.html" />
+        <option value="$PROJECT_DIR$/sakilaProducts.py" />
+        <option value="$PROJECT_DIR$/sakilaCustomers.py" />
+        <option value="$PROJECT_DIR$/customers.py" />
+        <option value="$PROJECT_DIR$/product.py" />
+        <option value="$PROJECT_DIR$/templates/admin.html" />
+        <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
@@ -323,22 +308,29 @@
       <option name="project" value="LOCAL" />
       <updated>1544623731806</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Sakila Pages">
+      <created>1544629321416</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1544629321416</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="28477000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15085287" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1818766" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2624729" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32614556" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -392,7 +384,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Admin and Customer page rendering" />
     <MESSAGE value="Customer Page content" />
-    <option name="LAST_COMMIT_MESSAGE" value="Customer Page content" />
+    <MESSAGE value="Sakila Pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sakila Pages" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/sqlalchemy/dialects/mysql/pymysql.py">
@@ -457,16 +450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/product.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="70" lean-forward="true" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/Product.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -474,48 +457,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/Products.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sakila.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sakilaCustomers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="37" lean-forward="true" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sakilaProducts.py">
+    <entry file="file://$PROJECT_DIR$/templates/customers.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -526,27 +471,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin.html">
+    <entry file="file://$PROJECT_DIR$/templates/Products.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        <state relative-caret-position="136">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/customers.py">
+    <entry file="file://$PROJECT_DIR$/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state>
+          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sakilaProducts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customers.html">
+    <entry file="file://$PROJECT_DIR$/sakilaCustomers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="84" lean-forward="true" selection-start-line="17" selection-start-column="84" selection-end-line="17" selection-end-column="84" />
+        <state relative-caret-position="68">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sakila.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/product.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="70" column="39" selection-start-line="70" selection-start-column="39" selection-end-line="70" selection-end-column="39" />
         </state>
       </provider>
     </entry>
