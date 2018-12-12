@@ -32,16 +32,14 @@ def adminpage():
 
 @app.route('/Customers')
 def customerspage():
-    return render_template('customers.html')
+    customers = session.query(Customers).all()
+    return render_template('customers.html', customers=customers)
 
 
 @app.route('/Products')
 def getproducts():
-    product = session.query(Product).all()
-    return render_template('Products.html', product=product)
     products = session.query(Product).all()
     return render_template('Products.html', products=products)
-
 
 
 @app.route('/product/<int:product_id>/')

@@ -11,12 +11,7 @@
       <tbody>
          {% for customer in customers %}
             <tr>
-               <td>{{ customer.last_name }}</td><td>{{ customer.first_name }}</td><td>{{ customer.username }}</td><td>{{ customer.last_update }}</td>
-               <td>
-                  <a href='../actor/{{ actor.actor_id }}/updateCustomer/'>Update Customer</a>&nbsp;&nbsp;&nbsp;
-                  <a href='../actor/{{ actor.actor_id }}/newCustomer/'>Add Customer</a>&nbsp;&nbsp;&nbsp;
-                  <a href='../actor/{{ actor.actor_id }}/deleteCustomer/'>Delete Customer</a>
-               </td>
+               <td>{{ customer.last_name }}</td><td>{{ customer.first_name }}</td><td>{{ custr.er.username }}</td><td>{{ customer.last_update }}</td>
             </tr>
          {% endfor %}
       </tbody>

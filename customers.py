@@ -11,15 +11,15 @@ class Customers(BASE):
     first_name = Column(String(255), nullable=False)
     last_name = Column(String(255), nullable=False)
     email = Column(String(255), nullable=False, index=True)
-    phone = Column(SMALLINT(unsigned=True), nullable=False)
-    address = Column(String(255), nullable=False)
-    city = Column(String(255), nullable=False)
-    state = Column(String(255), nullable=False)
-    zipcode = Column(SMALLINT(unsigned=True), nullable=False)
-    county = Column(String(255), nullable=False)
+    phone = Column(SMALLINT(unsigned=True), nullable=True)
+    address = Column(String(255), nullable=True)
+    city = Column(String(255), nullable=True)
+    state = Column(String(255), nullable=True)
+    zipcode = Column(SMALLINT(unsigned=True), nullable=True)
+    county = Column(String(255), nullable=True)
     username = Column(String(255), nullable=False, index=True)
     password = Column(String(255), nullable=False)
-    last_update = Column(TIMESTAMP, nullable=False)
+    last_update = Column(TIMESTAMP, nullable=True)
 
     __table_args__ = (
         PrimaryKeyConstraint('customerID', name='PRIMARY'),
