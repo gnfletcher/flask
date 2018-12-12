@@ -5,7 +5,7 @@ from base import BASE
 
 
 class SakilaProducts(BASE):
-    __tablename__ = 'sakila.film'
+    __tablename__ = 'film'
 
     film_id = Column(SMALLINT(unsigned=True), nullable=False, primary_key=True)
     title = Column(String(255), nullable=False)

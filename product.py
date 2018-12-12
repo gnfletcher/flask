@@ -5,7 +5,7 @@ from base import BASE
 
 
 class Product(BASE):
-    __tablename__ = 'db_project.product'
+    __tablename__ = 'product'
 
     ProductID = Column(SMALLINT(unsigned=True), nullable=False, primary_key=True)
     Name = Column(String(255), nullable=False, index=True)

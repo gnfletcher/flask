@@ -2,13 +2,24 @@
 {% block title %}2mazon{% endblock %}
 {% block h1 %}2mazon{% endblock %}
 
+
 {% block content %}
-   <h2>Inventory</h2>
-   <ul>
-      <li><a href='/Sakila'>Sakila</a>
-      <li><a href='/Northwinds'>Northwinds</a>
-      <li><a href='/AdventureWorks'>AdventureWorks</a>
-      <li><a href='/Inventory'>Inventory</a>
-      <li><a href='/Customers'>Customers</a>
-   </ul>
+   <table>
+      <thead>
+         <tr><th>Product ID</th><th>Product</th><th>Quantity</th><th>Update</th></tr>
+      </thead>
+      <tbody>
+         {% for product in products %}
+            <tr>
+               <td>{{ product.productID }}</td><td>{{ product.name  }}</td><td>{{ product.quantity  }}</td>
+                <td>
+                    <a href='../updateInventory/{{ customer.customerID }}'>update</a>
+                </td>
+            </tr>
+         {% endfor %}
+      </tbody>
+      <tr><td>
+   </table>
+   <a href='/Inventory/Reorder'>Reorder</a>
+
 {% endblock %}

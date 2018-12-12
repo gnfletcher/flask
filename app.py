@@ -58,7 +58,7 @@ def sakilaproductspage():
 
 @app.route('/Inventory')
 def getinventory():
-    inventory = session.query(Inventory).all()
+    inventory = session.query(Product).all()
     return render_template('inventory.html', inventory=inventory)
 
 

@@ -5,7 +5,7 @@ from base import BASE
 
 
 class SakilaCustomers(BASE):
-    __tablename__ = 'sakila.customer'
+    __tablename__ = 'customer'
 
     customer_id = Column(SMALLINT(unsigned=True), nullable=False, primary_key=True)
     store_id = Column(SMALLINT(unsigned=True), nullable=False)

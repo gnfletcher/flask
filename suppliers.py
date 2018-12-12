@@ -4,8 +4,8 @@ from sqlalchemy.dialects.mysql import SMALLINT, TIMESTAMP, DATE
 from base import BASE
 
 
-class Customers(BASE):
-    __tablename__ = 'db_project.customers'
+class Suppliers(BASE):
+    __tablename__ = 'suppliers'
 
     customerID = Column(SMALLINT(unsigned=True), nullable=False, primary_key=True)
     first_name = Column(String(255), nullable=False)
