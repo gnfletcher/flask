@@ -5,11 +5,10 @@ from base import BASE
 
 
 class Suppliers(BASE):
-    __tablename__ = 'suppliers'
+    __tablename__ = 'supplier'
 
-    customerID = Column(SMALLINT(unsigned=True), nullable=False, primary_key=True)
-    first_name = Column(String(255), nullable=False)
-    last_name = Column(String(255), nullable=False)
+    supplierID = Column(SMALLINT(unsigned=True), nullable=False, primary_key=True)
+    companyname = Column(String(255), nullable=False, index=True)
     email = Column(String(255), nullable=False, index=True)
     phone = Column(SMALLINT(unsigned=True), nullable=True)
     address = Column(String(255), nullable=True)
@@ -19,22 +18,16 @@ class Suppliers(BASE):
     country = Column(String(255), nullable=True)
     username = Column(String(255), nullable=False, index=True)
     password = Column(String(255), nullable=False)
-    last_update = Column(TIMESTAMP, nullable=True)
 
     __table_args__ = (
         PrimaryKeyConstraint('customerID', name='PRIMARY'),
-        Index('idx_email', 'email'),
-        Index('idx_username', 'username'),)
+        Index('idx_companyname', 'companyname'),)
 
     # The constructor
-    def __init__(self, customerid, first_name, last_name, email, username, password):
-        self.customerid = customerid
-        self.first_name = first_name
-        self.last_name = last_name
+    def __init__(self, supplierID, companyname, email):
+        self.supplierID = supplierID
+        self.companyname = companyname
         self.email = email
-        self.username = username
-        self.password = password
-        self.last_update = datetime.today()
 
     def __repr__(self):
         return "\nCustomer = (customerid = {self.customerid}, " \

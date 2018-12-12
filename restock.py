@@ -4,10 +4,10 @@ from sqlalchemy.dialects.mysql import SMALLINT, TIMESTAMP
 from base import BASE
 
 
-class Product(BASE):
-    __tablename__ = 'product'
+class Restock(BASE):
+    __tablename__ = 'restock'
 
-    ProductID = Column(SMALLINT(unsigned=True), nullable=False, primary_key=True)
+    RestockID = Column(SMALLINT(unsigned=True), nullable=False, primary_key=True)
     Name = Column(String(255), nullable=False, index=True)
     ProductNumber = Column(SMALLINT(unsigned=True), nullable=False)
     description = Column(Text())
@@ -26,10 +26,13 @@ class Product(BASE):
         Index('idx_name', 'Name'),)
 
     # The constructor
-    def __init__(self, name, description, unitprice):
+    def __init__(self, name, description, unitprice, standard_cost, weight, color):
         self.name = name
         self.description = description
         self.unitprice = unitprice
+        self.standard_cost = standard_cost
+        self.weight = weight
+        self.color = color
         self.last_update = datetime.today()
 
     def __repr__(self):

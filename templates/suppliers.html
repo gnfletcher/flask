@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}2mazon{% endblock %}
+{% block h1 %}2mazon{% endblock %}
+
+
+{% block content %}
+   <table>
+      <thead>
+         <tr><th>Last name</th><th>First name</th><th>Username</th><th>Update</th></tr>
+      </thead>
+      <tbody>
+         {% for customer in customers %}
+            <tr>
+               <td>{{ customer.last_name }}</td><td>{{ customer.first_name }}</td><td>{{ customer.username }}</td>
+               <td>{{ customer.last_update }}</td>
+                <td>
+                    <a href='../updateCustomer/{{ customer.customerID }}'>update</a>
+                    <a href='../deleteCustomer/{{ customer.customerID }}'>delete</a>
+                </td>
+            </tr>
+         {% endfor %}
+      </tbody>
+      <tr><td>
+   </table>
+   <a href='sakila/customer/new/'>Create new user</a>
+
+{% endblock %}
