@@ -85,9 +85,9 @@ def getproducts():
     return render_template('Products.html', products=products)
 
 
-@app.route('/product/<int:product_id>/')
-def getProduct(product_id):
-    product = session.query(Product).filter_by(product_id=product_id).one()
+@app.route('/product/<int:ProductID>/')
+def getproduct(ProductID):
+    product = session.query(Product).filter_by(ProductID=ProductID).one()
     return render_template('Product.html', product=product)
 
 
@@ -108,13 +108,12 @@ def insertProduct():
             flash("transaction rolled back")
         return redirect(url_for('getproducts'))
     else:
-        # if you didn't post the new film, you must want the new film form
         return render_template('newProduct.html')
 
 
-@app.route('/products/<int:actor_id>/update/', methods=['GET', 'POST'])
-def updateProduct(product_id):
-    editedProduct = session.query(Product).filter_by(product_id=product_id).one()
+@app.route('/products/<int:productID>/update/', methods=['GET', 'POST'])
+def updateProduct(productID):
+    editedProduct = session.query(Product).filter_by(productID=productID).one()
     if request.method == 'POST':
         name = request.form['name']
         description = request.form['description']

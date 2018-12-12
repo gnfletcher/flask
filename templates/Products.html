@@ -6,7 +6,7 @@
 {% block content %}
     <ul>
     {% for product in products %}
-       <h2><a href='/Product/{{ product.Product_ID }}/'>{{ product.Name }}</a></h2>
+       <h2><a href='/Product/{{ product.ProductID }}/'>{{ product.Name }}</a></h2>
        <summary>{{ product.description }}</summary>
    {% endfor %}
    </ul>

@@ -6,22 +6,21 @@
 {% block content %}
    <table>
       <thead>
-         <tr><th>Last name</th><th>First name</th><th>Username</th><th>Update</th></tr>
+         <tr><th>Company Name</th><th>City</th><th>State</th><th>Update</th></tr>
       </thead>
       <tbody>
-         {% for customer in customers %}
+         {% for supplier in suppliers %}
             <tr>
-               <td>{{ customer.last_name }}</td><td>{{ customer.first_name }}</td><td>{{ customer.username }}</td>
-               <td>{{ customer.last_update }}</td>
+               <td>{{ supplier.companyname }}</td><td>{{ supplier.city }}</td><td>{{ supplier.state }}</td>
                 <td>
-                    <a href='../updateCustomer/{{ customer.customerID }}'>update</a>
-                    <a href='../deleteCustomer/{{ customer.customerID }}'>delete</a>
+                    <a href='../updateSupplier/{{ supplier.supplierID }}'>update</a>
+                    <a href='../deleteSupplier/{{ supplier.supplierID }}'>delete</a>
                 </td>
             </tr>
          {% endfor %}
       </tbody>
       <tr><td>
    </table>
-   <a href='sakila/customer/new/'>Create new user</a>
+   <a href='/supplier/new/'>Create new supplier</a>
 
 {% endblock %}

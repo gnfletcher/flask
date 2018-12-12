@@ -20,7 +20,7 @@ class Suppliers(BASE):
     password = Column(String(255), nullable=False)
 
     __table_args__ = (
-        PrimaryKeyConstraint('customerID', name='PRIMARY'),
+        PrimaryKeyConstraint('supplierID', name='PRIMARY'),
         Index('idx_companyname', 'companyname'),)
 
     # The constructor
@@ -30,9 +30,7 @@ class Suppliers(BASE):
         self.email = email
 
     def __repr__(self):
-        return "\nCustomer = (customerid = {self.customerid}, " \
-               "\n\tFirst name = {self.first_name}," \
-               "\n\tLast name = {self.last_name}," \
+        return "\nCustomer = (supplierID = {self.supplierID}, " \
+               "\n\tCompany name = {self.companyname}," \
                "\n\temail = {self.email}," \
-               "\n\tusername = {self.username}," \
                "\n\tlast_update = {self.last_update})".format(self=self)
