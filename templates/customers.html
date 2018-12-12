@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}2mazon{% endblock %}
+{% block h1 %}2mazon{% endblock %}
 
-</body>
-</html>
+
+{% block content %}
+   <table>
+      <thead>
+         <tr><th>Last name</th><th>First name</th><th>Username</th><th>Last Updated</th></tr>
+      </thead>
+      <tbody>
+         {% for customer in customers %}
+            <tr>
+               <td>{{ customer.last_name }}</td><td>{{ customer.first_name }}</td><td>{{ customer.username }}</td><td>{{ customer.last_update }}</td>
+               <td>
+                  <a href='../actor/{{ actor.actor_id }}/updateCustomer/'>Update Customer</a>&nbsp;&nbsp;&nbsp;
+                  <a href='../actor/{{ actor.actor_id }}/newCustomer/'>Add Customer</a>&nbsp;&nbsp;&nbsp;
+                  <a href='../actor/{{ actor.actor_id }}/deleteCustomer/'>Delete Customer</a>
+               </td>
+            </tr>
+         {% endfor %}
+      </tbody>
+      <tr><td>
+   </table>
+   <a href='actor/new/'>Create new actor</a>
+
+{% endblock %}

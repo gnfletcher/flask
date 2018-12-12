@@ -9,6 +9,7 @@ from base import BASE
 from product import Product
 from shoppingcart import ShoppingCart
 from wishlist import Wishlist
+from customers import Customers
 import datetime;
 
 connection = create_engine('mysql+pymysql://guest:guest@localhost/db_project')
@@ -25,17 +26,17 @@ def index():
 
 
 @app.route('/Admin')
-def adminPage():
+def adminpage():
     return render_template('admin.html')
 
 
 @app.route('/Customers')
-def customersPage():
-    return render_template('Customers.html')
+def customerspage():
+    return render_template('customers.html')
 
 
 @app.route('/Products')
-def getProducts():
+def getproducts():
     product = session.query(Product).all()
     return render_template('Products.html', product=product)
     products = session.query(Product).all()
