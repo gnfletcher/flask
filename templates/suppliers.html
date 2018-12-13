@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}2mazon{% endblock %}
+{% block h1 %}2mazon{% endblock %}
+
+
+{% block content %}
+   <table>
+      <thead>
+         <tr><th>Company Name</th><th>City</th><th>State</th><th>Update</th></tr>
+      </thead>
+      <tbody>
+         {% for supplier in suppliers %}
+            <tr>
+               <td>{{ supplier.companyname }}</td><td>{{ supplier.city }}</td><td>{{ supplier.state }}</td>
+                <td>
+                    <a href='../updateSupplier/{{ supplier.supplierID }}'>update</a>
+                    <a href='../deleteSupplier/{{ supplier.supplierID }}'>delete</a>
+                </td>
+            </tr>
+         {% endfor %}
+      </tbody>
+      <tr><td>
+   </table>
+   <a href='/supplier/new/'>Create new supplier</a>
+
+{% endblock %}

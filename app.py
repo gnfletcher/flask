@@ -9,14 +9,23 @@ from base import BASE
 from product import Product
 from shoppingcart import ShoppingCart
 from wishlist import Wishlist
+from customers import Customers
+from sakilaCustomers import SakilaCustomers
+from sakilaProducts import SakilaProducts
+from suppliers import Suppliers
 import datetime;
 
-connection = create_engine('mysql+pymysql://guest:guest@localhost/db_project')
+connection = create_engine('mysql+pymysql://guest:guest@localhost:3306/db_project')
+sakilaconnection = create_engine('mysql+pymysql://guest:guest@localhost:3306/sakila')
 BASE.metadata.create_all(connection)
+BASE.metadata.create_all(sakilaconnection)
 
 Session = sessionmaker(bind=connection)
+Session2 = sessionmaker(bind=sakilaconnection)
 session = Session()
+session2 = Session2()
 session.rollback()
+session2.rollback()
 
 
 @app.route('/')
@@ -24,40 +33,87 @@ def index():
     return render_template('main.html')
 
 
+@app.route('/Admin')
+def adminpage():
+    return render_template('admin.html')
+
+
+@app.route('/Sakila')
+def sakilapage():
+    return render_template('sakila.html')
+
+
+@app.route('/Sakila/Customers')
+def sakilacustomerspage():
+    customers = session2.query(SakilaCustomers).all()
+    return render_template('customers.html', customers=customers)
+
+
+@app.route('/Sakila/Products')
+def sakilaproductspage():
+    products = session2.query(SakilaProducts).all()
+    return render_template('films.html', products=products)
+
+
+@app.route('/Inventory')
+def getinventory():
+    products = session.query(Product).all()
+    return render_template('inventory.html', products=products)
+
+
+@app.route('/Inventory/Reorder')
+def reorder():
+    products = session.query(Product).all()
+    return render_template('reorder.html', products=products)
+
+
+@app.route('/Customers')
+def customerspage():
+    customers = session.query(Customers).all()
+    return render_template('customers.html', customers=customers)
+
+
+@app.route('/Suppliers')
+def getsuppliers():
+    suppliers = session.query(Suppliers).all()
+    return render_template('suppliers.html', suppliers=suppliers)
+
+
 @app.route('/Products')
-def getProducts():
-    product = session.query(Product).all()
-    return render_template('Products.html', product=product)
+def getproducts():
     products = session.query(Product).all()
     return render_template('Products.html', products=products)
 
 
-
-@app.route('/product/<int:product_id>/')
-def getProduct(product_id):
-    product = session.query(Product).filter_by(product_id=product_id).one()
+@app.route('/product/<int:ProductID>/')
+def getproduct(ProductID):
+    product = session.query(Product).filter_by(ProductID=ProductID).one()
     return render_template('Product.html', product=product)
 
 
 @app.route('/products/new/', methods=['GET', 'POST'])
 def insertProduct():
     if request.method == 'POST':
-        product_id = request.form['product_id']
-        name = request.form['name']
-        description = request.form['description']
-        price = request.form['price']
-        newproduct = Product(product_id=product_id, name=name, description=description, price=price)
-        session.add(newproduct)
-        session.commit()
-        flash("new product " + name + " created")
-        return redirect(url_for('getProducts'))
+        name = request.form['Name']
+        newproduct = Product(name=name,
+                             description=request.form['description'],
+                             unitprice=request.form['unitprice'],
+                             )
+        try:
+            session.add(newproduct)
+            session.commit()
+            flash("new product, " + name + ", created")
+        except:
+            session.rollback()
+            flash("transaction rolled back")
+        return redirect(url_for('getproducts'))
     else:
-        return render_template('newproduct.html')
+        return render_template('newProduct.html')
 
 
-@app.route('/products/<int:actor_id>/update/', methods=['GET', 'POST'])
-def updateProduct(product_id):
-    editedProduct = session.query(Product).filter_by(product_id=product_id).one()
+@app.route('/products/<int:productID>/update/', methods=['GET', 'POST'])
+def updateProduct(productID):
+    editedProduct = session.query(Product).filter_by(productID=productID).one()
     if request.method == 'POST':
         name = request.form['name']
         description = request.form['description']
@@ -88,13 +144,14 @@ def deleteProduct(product_id):
 @app.route('/ShoppingCart')
 def getShoppingCart():
     shoppingcart = session.query(ShoppingCart).all()
-    return render_template('shoppingcart.html', shoppingcart = shoppingcart)
+    return render_template('shoppingcart.html', shoppingcart=shoppingcart)
 
 
 @app.route('/ShoppingCart/add')
 def addShoppingCart(shoppingcart, customer_id, product_id, quantity):
     if request.method == 'POST':
-        newshoppingcart = session.execute('add_to_cart', customer_id=customer_id, product_id=product_id, quantity=quantity)
+        newshoppingcart = session.execute('add_to_cart', customer_id=customer_id, product_id=product_id,
+                                          quantity=quantity)
         session.commit()
         flash(product_id + " added to cart")
         return render_template('shoppingcart.html', shoppingcart=shoppingcart)
@@ -102,11 +159,14 @@ def addShoppingCart(shoppingcart, customer_id, product_id, quantity):
         return render_template('shoppingcart.html', shoppingcart=shoppingcart)
 
 
-@app.route('/Wishlist')
-def getWishlist():
-    wishlist = session.query(Wishlist).all()
-    return render_template('wishlist.html', wishlist = wishlist)
+@app.route('/Wishlist/<int:customerID>/')
+def getWishlist(customerID):
+    wishlist = session.query(Wishlist).filter_by(customerID=customerID).all()
+    customer = session.query(Customers).filter_by(customerID=customerID).one()
+    return render_template('wishlist.html', wishlist=wishlist, customer=customer)
 
 
 if __name__ == '__main__':
+    app.secret_key = '8234-alhhsn-23i14'
+    app.debug = True
     app.run()

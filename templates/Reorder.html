@@ -10,16 +10,18 @@
       </thead>
       <tbody>
          {% for product in products %}
-           <tr>
-               <td>{{ product.ProductID }}</td><td>{{ product.Name }}</td><td>{{ product.quantity_per_unit }}</td>
+             {% if product.quantity_per_unit|int < product.minimum_stock_level|int %}
+                 <tr>
+                     <td>{{ product.ProductID }}</td><td>{{ product.Name }}</td><td>{{ product.quantity_per_unit }}</td>
                      <td>
                          <a href='../Inventory/{{ product.Product_ID }}'>update</a>
-                     </td>
-           </tr>
+                        </td>
+                 </tr>
+             {% endif %}
          {% endfor %}
       </tbody>
       <tr><td>
    </table>
-   <a href='/Inventory/Reorder'>Reorder</a>
+   <a href='../Inventory/'>Inventory</a>
 
 {% endblock %}

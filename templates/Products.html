@@ -5,9 +5,9 @@
 
 {% block content %}
     <ul>
-    {% for products in products %}
-       <h2><a href='/Product/{{ products.Product_ID }}/'>{{ products.Name }}</a></h2>
-       <summary>{{ products.description }}</summary>
+    {% for product in products %}
+       <h2><a href='/Product/{{ product.ProductID }}/'>{{ product.Name }}</a></h2>
+       <summary>{{ product.description }}</summary>
    {% endfor %}
    </ul>
    <ul>
