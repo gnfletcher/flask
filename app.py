@@ -41,7 +41,7 @@ def listings():
 
 @app.route('/Admin')
 def adminpage():
-    return render_template('admin.html')
+    return render_template('admin.html', title="Admin")
 
 
 @app.route('/Sakila')
@@ -52,7 +52,7 @@ def sakilapage():
 @app.route('/Sakila/Customers')
 def sakilacustomerspage():
     customers = session2.query(SakilaCustomers).all()
-    return render_template('customers.html', customers=customers)
+    return render_template('customers.html', customers=customers, title="Sakila Customers")
 
 
 @app.route('/Sakila/Products')
@@ -76,7 +76,7 @@ def reorder():
 @app.route('/Customers')
 def customerspage():
     customers = session.query(Customers).all()
-    return render_template('customers.html', customers=customers)
+    return render_template('customers.html', customers=customers, title="Customers")
 
 
 @app.route('/Suppliers')

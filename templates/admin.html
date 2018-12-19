@@ -1,16 +1,27 @@
 {% extends "base.html" %}
-{% block title %}2mazon{% endblock %}
-{% block h1 %}2mazon{% endblock %}
-
 {% block content %}
-   <h2>Admin Views</h2>
-   <ul>
-      <li><a href='/Sakila'>Sakila</a>
-      <li><a href='/Northwinds'>Northwinds</a>
-      <li><a href='/AdventureWorks'>AdventureWorks</a>
-      <li><a href='/Inventory'>Inventory</a>
-      <li><a href='/Customers'>Customers</a>
-      <li><a href='/Suppliers'>Suppliers</a>
-      <li><a href='/Products'>Products</a>
-   </ul>
+<!-- ========================= SECTION PAGETOP ========================= -->
+<section class="section-pagetop bg-secondary">
+<div class="container clearfix">
+	<h2 class="title-page">{{ title }}</h2>
+
+	<nav class="float-left">
+	<ol class="breadcrumb text-white">
+      <li class="breadcrumb-item"><a href='/Sakila'>Sakila</a>
+      <li class="breadcrumb-item"><a href='/Northwinds'>Northwinds</a>
+      <li class="breadcrumb-item"><a href='/AdventureWorks'>AdventureWorks</a>
+      <li class="breadcrumb-item"><a href='/Inventory'>Inventory</a>
+      <li class="breadcrumb-item"><a href='/Customers'>Customers</a>
+      <li class="breadcrumb-item"><a href='/Suppliers'>Suppliers</a>
+      <li class="breadcrumb-item"><a href='/Products'>Products</a>
+	</ol>
+	</nav>
+</div> <!-- container //  -->
+</section>
+<!-- ========================= SECTION INTRO END// ========================= -->
+    <main class="col-sm-9">
+
+      <div id="body">{% block body%}{% endblock %}</div>
+
+    </main> <!-- col.// -->
 {% endblock %}
