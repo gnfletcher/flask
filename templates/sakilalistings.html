@@ -1,0 +1,61 @@
+{% extends "shopping.html" %}
+{% block body %}
+
+{% for product in products %}
+<article class="card card-product">
+	<div class="card-body">
+	<div class="row">
+
+		<aside class="col-sm-3">
+            <div class="img-wrap"><a href='/Product/{{ product.ProductID }}/'><img src="{{ url_for('static', filename='images/items/ITEM-SM.jpg') }}"></a></div>
+		</aside> <!-- col.// -->
+
+		<article class="col-sm-6">
+            <h4 class="title"><a href='/Product/{{ product.ProductID }}/'> {{ product.title }} </a></h4>
+				<div class="rating-wrap  mb-2">
+					<ul class="rating-stars">
+						<li style="width:80%" class="stars-active">
+							<i class="fa fa-star"></i> <i class="fa fa-star"></i>
+							<i class="fa fa-star"></i> <i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						</li>
+						<li>
+							<i class="fa fa-star"></i> <i class="fa fa-star"></i>
+							<i class="fa fa-star"></i> <i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						</li>
+					</ul>
+					<div class="label-rating">132 reviews</div>
+					<div class="label-rating">154 orders </div>
+				</div> <!-- rating-wrap.// -->
+				<summary>{{ product.description }}</summary>
+				<dl class="dlist-align">
+				  <dt>Rating</dt>
+				  <dd>{{ product.rating }}</dd>
+				</dl>  <!-- item-property-hor .// -->
+				<dl class="dlist-align">
+				  <dt>Released</dt>
+				  <dd>{{ product.release_year }}</dd>
+				</dl>  <!-- item-property-hor .// -->
+
+		</article> <!-- col.// -->
+		<aside class="col-sm-3 border-left">
+			<div class="action-wrap">
+				<div class="price-wrap h4">
+					<span class="price"> ${{ product.rental_rate}} </span>
+				</div> <!-- info-price-detail // -->
+				<p class="text-success">Free shipping</p>
+				<br>
+				<p>
+					<a href="#" class="btn btn-primary"> Buy now </a>
+					<a href="#" class="btn btn-secondary"> Details  </a>
+				</p>
+				<a href="#"><i class="fa fa-heart"></i> Add to wishlist</a>
+			</div> <!-- action-wrap.// -->
+		</aside> <!-- col.// -->
+	</div> <!-- row.// -->
+	</div> <!-- card-body .// -->
+</article> <!-- card product .// -->
+{% endfor %}
+
+{% endblock %}

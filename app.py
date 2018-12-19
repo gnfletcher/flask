@@ -33,6 +33,12 @@ def index():
     return render_template('main.html')
 
 
+@app.route('/listings')
+def listings():
+    products = session.query(Product).all()
+    return render_template('listings.html', products=products, title="Product Catalogue")
+
+
 @app.route('/Admin')
 def adminpage():
     return render_template('admin.html')
@@ -52,7 +58,7 @@ def sakilacustomerspage():
 @app.route('/Sakila/Products')
 def sakilaproductspage():
     products = session2.query(SakilaProducts).all()
-    return render_template('films.html', products=products)
+    return render_template('sakilalistings.html', products=products, title="Sakila Products")
 
 
 @app.route('/Inventory')
@@ -82,7 +88,7 @@ def getsuppliers():
 @app.route('/Products')
 def getproducts():
     products = session.query(Product).all()
-    return render_template('Products.html', products=products)
+    return render_template('listings.html', products=products)
 
 
 @app.route('/product/<int:ProductID>/')
