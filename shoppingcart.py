@@ -12,7 +12,6 @@ class ShoppingCart(BASE):
     createdDate = Column(DATE)
     customerID = Column(SMALLINT(unsigned=True), nullable=False)
     productID = Column(SMALLINT(unsigned=True), nullable=False)
-    last_update = Column(TIMESTAMP, nullable=False)
 
     __table_args__ = (
         PrimaryKeyConstraint('shoppingCartID', name='PRIMARY'),
